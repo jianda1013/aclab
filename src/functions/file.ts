@@ -9,7 +9,7 @@ const s3 = new S3({
   s3ForcePathStyle: true,
 });
 
-export const getFiles = (path: string) => {
+export const getCourse = (path: string) => {
   s3.getObject({ Bucket: "test", Key: "first/second/OUO.txt" }, (err, data) => {
     console.log(data.Body?.toString("utf-8"));
   });

@@ -1,12 +1,14 @@
 FROM node:16-alpine
 
-COPY package*.json .
-COPY tsconfig.json .
-
-RUN npm install
-RUN npm install --location=global nodemon
+WORKDIR /usr/local/src
 
 RUN apk update
 RUN apk add vim git
 
-CMD ["nodemon", "src"]
+RUN npm install --location=global nodemon
+
+COPY package.json .
+
+RUN npm install
+
+CMD ["npm", "run", "dev"]
