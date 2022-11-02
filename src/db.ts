@@ -1,19 +1,14 @@
-import { DataSource } from "typeorm";
-import { Course } from "./entity/course";
-import { Slides } from "./entity/slides";
+import { knex } from "knex";
 
-export const AppDataSource = new DataSource({
-  type: "postgres",
-  host: "db",
-  port: 5432,
-  username: process.env.POSTGRES_USER || "user",
-  password: process.env.POSTGRES_PASSWORD || "passwd",
-  database: process.env.POSTGRES_DB || "db",
-  synchronize: true,
-  logging: false,
-  entities: [Course, Slides],
-  subscribers: [],
-  migrations: [],
+const db = knex({
+  client: "pg",
+  connection: {
+    host: process.env.DB_HOST,
+    database: process.env.POSTGRES_DB,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+  },
+  pool: { max: 10, min: 2 },
 });
 
-export default AppDataSource;
+export default db;

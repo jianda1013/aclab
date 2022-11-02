@@ -18,7 +18,7 @@ services:
     env_file:
       - .env.db
     volumes:
-      - ./db_data:/var/lib/postgresql/data
+      - ./pg_data:/var/lib/postgresql/data
 
   adminer:
     image: adminer
