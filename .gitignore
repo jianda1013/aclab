@@ -103,6 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-**/db_data
+**/pg_data
 **/minio_data
 **/.env*
