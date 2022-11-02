@@ -23,6 +23,8 @@ services:
   adminer:
     image: adminer
     restart: always
+    environment:
+      - ADMINER_DESIGN=galkaev
     ports:
       - 8181:8080
 

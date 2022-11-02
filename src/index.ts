@@ -1,4 +1,5 @@
 import Express from "express";
+import knex from "./db";
 
 const app = Express();
 app.use(Express.urlencoded({ extended: false }));

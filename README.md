@@ -14,6 +14,7 @@ Docker-Compose---Server
 ```
 
 ### frontend
+
 ```mermaid
 graph TD
 Page---course---pdf
@@ -23,6 +24,7 @@ Page---projects
 ```
 
 ### backend
+
 ```mermaid
 graph TD
 Index---User
@@ -42,71 +44,72 @@ erDiagram
 ```
 
 #### File
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | |
-| path | varChar | unique | path in minio |
 
-#### course
+| colume | type       | property | description   |
+| ------ | ---------- | -------- | ------------- |
+| id     | unsign int | pk       |               |
+| name   | varChar    |          |               |
+| path   | varChar    | unique   | path in minio |
 
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | |
-| year | integer |  | |
-| semester | enum | | [ fall, spring ] |
+#### Course
+
+| colume   | type       | property | description      |
+| -------- | ---------- | -------- | ---------------- |
+| id       | unsign int | pk       |                  |
+| name     | varChar    |          |                  |
+| year     | integer    |          |                  |
+| semester | enum       |          | [ fall, spring ] |
 
 #### Slide
 
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | |
-| course_id | unsign int | fk - `course.id` | |
-| file_id | unsign int | fk - `file.id` | |
+| colume    | type       | property         | description |
+| --------- | ---------- | ---------------- | ----------- |
+| id        | unsign int | pk               |             |
+| name      | varChar    |                  |             |
+| course_id | unsign int | fk - `course.id` |             |
+| file_id   | unsign int | fk - `file.id`   |             |
 
 #### Paper
 
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | |
-| file_id | unsign int | fk - `file.id` | |
-| year | int | | |
+| colume  | type       | property       | description |
+| ------- | ---------- | -------------- | ----------- |
+| id      | unsign int | pk             |             |
+| name    | varChar    |                |             |
+| file_id | unsign int | fk - `file.id` |             |
+| year    | int        |                |             |
 
 #### Student
 
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | |
-| year | int | | |
-| research | varchar | | |
+| colume      | type       | property | description |
+| ----------- | ---------- | -------- | ----------- |
+| id          | unsign int | pk       |             |
+| name        | varChar    |          |             |
+| student_uid | varChar    |          |             |
+| research    | varChar    |          |             |
 
-#### Research Paper
+#### Student Paper
 
-| colume | type | property | description |
-|---|---|---|---|
-| student_id | unsign int | fk - `student.id` | |
-| paper_id | unsign int | fk - `paper.id` |  |
-| graduation | boolean | | default = 0 |
+| colume     | type       | property          | description |
+| ---------- | ---------- | ----------------- | ----------- |
+| student_id | unsign int | fk - `student.id` |             |
+| paper_id   | unsign int | fk - `paper.id`   |             |
+| graduation | boolean    |                   | default = 0 |
 
 #### Project
 
-| colume | type | property | description |
-|---|---|---|---|
-| id | unsign int | pk | |
-| name | varChar | | 校內計畫編號 |
-| school_id | varChar | | 校內計畫編號 | 
-| project_id | varChar | | 計畫編號 |
-| exec_time | varChar | | 計畫執行期限 |
-| active_time | varChar | | 學習活動期間 |
+| colume      | type       | property | description  |
+| ----------- | ---------- | -------- | ------------ |
+| id          | unsign int | pk       |              |
+| name        | varChar    |          | 計畫名稱     |
+| school_id   | varChar    |          | 校內計畫編號 |
+| project_id  | varChar    |          | 計畫編號     |
+| exec_time   | varChar    |          | 計畫執行期限 |
+| active_time | varChar    |          | 學習活動期間 |
 
 #### Project_Student
 
-| colume | type | property | description |
-|---|---|---|---|
-| student_id | unsign int | fk - `student.id` | |
-| project_id | unsign int | fk - `project.id` |  |
-| scholarship | int | |  |
+| colume      | type       | property          | description |
+| ----------- | ---------- | ----------------- | ----------- |
+| student_id  | unsign int | fk - `student.id` |             |
+| project_id  | unsign int | fk - `project.id` |             |
+| scholarship | int        |                   |             |
