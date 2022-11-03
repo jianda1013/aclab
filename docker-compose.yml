@@ -4,6 +4,8 @@ services:
   aclab_server:
     restart: always
     build: .
+    ports:
+      - 1337:1337
     volumes:
       - ./:/usr/local/src
       - /usr/local/src/node_modules
@@ -30,6 +32,7 @@ services:
     image: quay.io/minio/minio
     restart: always
     ports:
+      - 9000:9000
       - 9090:9090
     volumes:
       - ./minio_data:/data

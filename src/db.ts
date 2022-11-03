@@ -8,7 +8,7 @@ const db = knex({
     user: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
   },
-  pool: { max: 10, min: 2 },
+  pool: { max: 10, min: 2 }, 
 });
 
 export default db;
