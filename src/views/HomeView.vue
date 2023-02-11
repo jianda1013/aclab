@@ -28,7 +28,7 @@
       </div>
     </div>
     </nav>
-    <div>
+    <div style="overflow: hidden;">
       <div class="vanta_area" ref="Area" style="overflow:hidden">
         <div class="container d-flex">
           <figure class="text-end">
