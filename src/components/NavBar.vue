@@ -8,10 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">主頁</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">關於我們</a>
+          <router-link to="/about" class="nav-link">關於我們</router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">合作企劃</a>

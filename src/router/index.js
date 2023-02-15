@@ -18,7 +18,7 @@ const routes = [
   {
     path: '/cryto',
     name: 'cryto',
-    component: () => import('../components/FooterLine.vue')
+    component: () => import('../components/PersonalFile.vue')
   }
 ]
 
