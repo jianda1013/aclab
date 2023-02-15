@@ -2,7 +2,7 @@
     <div class="starry-night">
         <div class="container" style="opacity: 0.8;">
             <div class="row">
-                <div class="col-8">
+                <div class="col-12">
                     <div class="card mb-3 border-light" style="max-width: 1000px;">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -21,10 +21,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center align-item-center" >
-                    <button type="button" class="btn btn-dark align-self-center btn-lg">Dark</button>
-                    <button type="button" class="btn btn-dark align-self-center btn-lg">Dark</button>
-                </div>
             </div>
         </div>
         <div></div>
@@ -38,7 +34,7 @@
         right: 0;
         bottom: 0;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%),
-                    url('../assets/night.jpg.jpg');
+                    url('../assets/night2.jpg');
         animation: stars 50s infinite;
     }
 
