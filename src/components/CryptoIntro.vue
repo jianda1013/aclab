@@ -1,7 +1,7 @@
 <template>
     <div class="container">
           <div class="row  justify-content-evenly mt-2">
-              <div class="shadow card col-4 mt-2 text-center" style="width: 18rem;">
+              <div class="shadow card col-4 mt-2 text-center border-4" style="width: 18rem;">
                   <img src="../assets/123.png" class="card-img-top " alt="">
                   <div class="card-body mt-1">
                       <h5 class="card-title fw-bold">Cryptography</h5>
@@ -9,7 +9,7 @@
                       <a href="#" class="btn btn-primary ">Intro</a>
                   </div>
               </div>
-              <div class="shadow card col-4 mt-2 text-center" style="width: 18rem;">
+              <div class="shadow card col-4 mt-2 text-center border-4" style="width: 18rem;">
                   <img src="../assets/istockphoto-1363235380-612s.jpg" class="card-img-top " alt="" style="height:100%
                   ">
                   <div class="card-body">
@@ -18,7 +18,7 @@
                       <a href="#" class="btn btn-primary">Intro</a>
                   </div>
               </div>
-              <div class="shadow card col-4 mt-2 text-center" style="width: 18rem;">
+              <div class="shadow card col-4 mt-2 text-center border-4" style="width: 18rem;">
                   <img src="../assets/whatis_encryption.png" class="card-img-top mt-3" alt="">
                   <div class="card-body mt-4">
                       <h5 class="card-title text-center fw-bold">Encryption</h5>
