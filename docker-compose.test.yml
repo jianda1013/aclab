@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  test_server:
+    restart: always
+    build:
+      dockerfile: Dockerfile.test
+      context: .
+    volumes:
+      - ./:/usr/local/src
+      - /usr/local/src/node_modules
+    env_file:
+      - .env
+      - .env.db
+      - .env.minio
+    environment:
+      - DB_HOST=test_db
+      - MINIO_HOST=http://test_minio:9000
+
+
+  test_db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env.db
+
+  test_minio:
+    image: quay.io/minio/minio
+    restart: always
+    env_file:
+      - .env.minio

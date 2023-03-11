@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  aclab_server:
+    restart: always
+    build: .
+    ports:
+      - 1337:1337
+    volumes:
+      - ./:/usr/local/src
+      - /usr/local/src/node_modules
+    env_file:
+      # - .env
+      - .env.db
+      - .env.minio
+
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env.db
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8181:8080
+
+  minio:
+    image: quay.io/minio/minio
+    restart: always
+    ports:
+      - 9000:9000
+      - 9090:9090
+    volumes:
+      - ./minio_data:/data
+    env_file:
+      - .env.minio
+    command: server /data --console-address ":9090"

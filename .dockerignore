@@ -1,0 +1,8 @@
+**/docker*
+LICENSE
+Makefile
+**/*.MD
+pg_data/
+node_modules/
+minio_data/
+dist/
