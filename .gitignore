@@ -106,3 +106,5 @@ dist
 **/pg_data
 **/minio_data
 **/.env*
+**/.DS_Store
+**/._MACOSX
